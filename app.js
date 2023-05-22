@@ -1,144 +1,13 @@
-'use strict';
-let ghaziSamer	= {
-        employeeID : function(){
-            let min = 1000;
-            let max = 1999;
-            const id =Math.floor(Math.random() * (max - min) ) + min;
-            return id;
-            },
-        fullName : 'Ghazi Samer',
-        department : 'Administration',
-        level : 'Senior',
-        imageURL : document.getElementById("img1"),
-        salary : function(){
-            let arr1 = levelSalary(ghaziSamer);
-            let min=arr1[0];
-            let max=arr1[1];
-            const a = Math.floor(Math.random() * (max - min) ) + min;
-            const x = Math.floor(a - (0.075*a));
-            return x;
-            },
-};
-let lanaAli	= {
-        employeeID : function(){
-            let min = 1000;
-            let max = 1999;
-            const id =Math.floor(Math.random() * (max - min) ) + min;
-            return id;
-            },
-        fullName : 'Lana Ali',
-        department : 'Finance',
-        level : 'Senior',
-        imageURL : document.getElementById("img2"),
-        salary : function(){
-            let arr1 = levelSalary(lanaAli);
-            let min=arr1[0];
-            let max=arr1[1];
-            const a = Math.floor(Math.random() * (max - min) ) + min;
-            const x = Math.floor(a - (0.075*a));
-            return x;
-            }
-};
-let tamaraAyoub	= {
-        employeeID :  function(){
-            let min = 1000;
-            let max = 1999;
-            const id =Math.floor(Math.random() * (max - min) ) + min;
-            return id;
-            },
-        fullName : 'Tamara Ayoub',
-        department : 'Marketing',
-        level : 'Senior',
-        imageURL : document.getElementById("img3"),
-        salary : function(){
-            let arr1 = levelSalary(tamaraAyoub);
-            let min=arr1[0];
-            let max=arr1[1];
-            const a = Math.floor(Math.random() * (max - min) ) + min;
-            const x = Math.floor(a - (0.075*a));
-            return x;
-            }
-};
-let safiWalid	= {
-        employeeID :  function(){
-            let min = 1000;
-            let max = 1999;
-            const id =Math.floor(Math.random() * (max - min) ) + min;
-            return id;
-            },
-        fullName : 'Safi Walid',
-        department : 'Administration',
-        level : 'Mid-Senior',
-        imageURL : document.getElementById("img4"),
-        salary : function(){
-            let arr1 = levelSalary(safiWalid);
-            let min=arr1[0];
-            let max=arr1[1];
-            const a = Math.floor(Math.random() * (max - min) ) + min;
-            const x = Math.floor(a - (0.075*a));
-            return x;
-            }
-};
-let omarZaid	= {
-        employeeID :  function(){
-            let min = 1000;
-            let max = 1999;
-            const id =Math.floor(Math.random() * (max - min) ) + min;
-            return id;
-            },
-        fullName : 'Omar Zaid',
-        department : 'Development',
-        level : 'Senior',
-        imageURL : document.getElementById("img5"),
-        salary : function(){
-            let arr1 = levelSalary(omarZaid);
-            let min=arr1[0];
-            let max=arr1[1];
-            const a = Math.floor(Math.random() * (max - min) ) + min;
-            const x = Math.floor(a - (0.075*a));
-            return x;
-            }
-};
-let ranaSaleh	= {
-        employeeID :  function(){
-            let min = 1000;
-            let max = 1999;
-            const id =Math.floor(Math.random() * (max - min) ) + min;
-            return id;
-            },
-        fullName : 'Rana Saleh',
-        department : 'Development',
-        level : 'Junior',
-        imageURL : document.getElementById("img6"),
-        salary : function(){
-            let arr1 = levelSalary(ranaSaleh);
-            let min=arr1[0];
-            let max=arr1[1];
-            const a = Math.floor(Math.random() * (max - min) ) + min;
-            const x = Math.floor(a - (0.075*a));
-            return x;
-            }
-};
-let hadiAhmad	= {
-        employeeID :  function(){
-            let min = 1000;
-            let max = 1999;
-            const id =Math.floor(Math.random() * (max - min) ) + min;
-            return id;
-            },
-            fullName : 'Hadi Ahmad',
-        department : 'Finance',
-        level : 'Mid-Senior',
-        imageURL : document.getElementById("img7"),
-        salary : function(){
-            let arr1 = levelSalary(hadiAhmad);
-            let min=arr1[0];
-            let max=arr1[1];
-            const a = Math.floor(Math.random() * (max - min) ) + min;
-            const x = Math.floor(a - (0.075*a));
-            return x;
-            }
-};
+'use strict'
+const employee = [];
+function Employee (name ,department ,level , image ){
+    this.fullName = name;
+    this.department = department;
+    this.level = level;
+    this.imageURL = image;
+    employee.push(this);
+}
+
 function levelSalary(name){
     var min;
     var max;
@@ -158,14 +27,39 @@ function levelSalary(name){
      arr.push(min);
      arr.push(max);
    return  arr;
-};
+}
 
+Employee.prototype.employeeId = function(){
+    let min = 1000;
+        let max = 1999;
+        const id =Math.floor(Math.random() * (max - min) ) + min;
+        return id;
+}
 
-document.getElementById("demo").innerHTML = `Employee name: ${ghaziSamer.fullName} <br/>Employee salary: ${ghaziSamer.salary()}
-<br/><br/>Employee name: ${lanaAli.fullName} <br/>Employee salary: ${lanaAli.salary()}
-<br/><br/>Employee name: ${tamaraAyoub.fullName} <br/>Employee salary: ${tamaraAyoub.salary()}
-<br/><br/>Employee name: ${safiWalid.fullName} <br/>Employee salary: ${safiWalid.salary()}
-<br/><br/>Employee name: ${omarZaid.fullName} <br/>Employee salary: ${omarZaid.salary()}
-<br/><br/>Employee name: ${ranaSaleh.fullName} <br/>Employee salary: ${ranaSaleh.salary()}
-<br/><br/>Employee name: ${hadiAhmad.fullName} <br/>Employee salary: ${hadiAhmad.salary()}`;
+Employee.prototype.salary = function (){
+    let arr1 = levelSalary(ghaziSamer);
+    let min=arr1[0];
+    let max=arr1[1];
+    const a = Math.floor(Math.random() * (max - min) ) + min;
+    const x = Math.floor(a - (0.075*a));
+    return x;
+}
+
+let ghaziSamer = new Employee('Ghazi Samer' ,'Administration' ,'Senior' ,'male.jpg');
+let lanaAli = new Employee('Lana Ali' ,'Finance' ,'Senior' ,'female.jpg');
+let tamaraAyoub = new Employee('Tamara Ayoub' ,'Marketing' ,'Senior' ,'female.jpg');
+let safiWalid =new Employee('Safi Walid' ,'Administration' ,'Mid-Senior' ,'male.jpg');
+let omarZaid = new Employee('Omar Zaid' ,'Development' ,'Senior' ,'male.jpg');
+let ranaSaleh = new Employee('Rana Saleh' ,'Development' ,'Junior' ,'female.jpg');
+let hadiAhmad = new Employee('Hadi Ahmad' ,'Finance' ,'Mid-Senior' ,'male.jpg');
+
+Employee.prototype.renderEmployee = function(){
+    document.write(`<body><main><p>Employee name: ${this.fullName}<br/>
+    Department: ${this.department}<br/>
+    Employee salary: ${this.salary()}<br/><br/></p></main></body>`);
+}
+
+for (let i = 0; i < employee.length;i++){
+    employee[i].renderEmployee();
+}
 

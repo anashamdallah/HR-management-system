@@ -8,10 +8,12 @@
 body main {
     padding-top: 30px;
     background-color: #E8F6EF;
-    min-height: calc(100vh - 80px);
-    display: flex;
-    justify-content:space-between;
-padding-left:100px;}
+    padding-top: 0;
+    padding-bottom: 0;
+    /* min-height: calc(100vh - 50px); */
+    display: flex; 
+    justify-content:left; 
+    padding-left:50px; }
 body main p{
     color:#03332a;
     font-family:Arial, Helvetica, sans-serif;
